@@ -13,10 +13,6 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-/**
- *
- * @author Andy
- */
 public class JavaFXApplication2 extends Application {
     
     @Override
