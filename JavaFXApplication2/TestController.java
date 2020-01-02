@@ -11,8 +11,6 @@ import javafx.fxml.Initializable;
 
 /**
  * FXML Controller class
- *
- * @author Andy
  */
 public class TestController implements Initializable {
 
