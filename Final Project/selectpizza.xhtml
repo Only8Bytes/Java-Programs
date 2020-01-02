@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <head>
+        <title>Select your pizza</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <h1>Select your pizza</h1>
+        <h:form>
+            <h:selectOneRadio id="pizzaType" value="#{pizzaBean.pizzaType}" required="true" requiredMessage="You must choose an option">
+                <f:selectItem itemValue="1" itemLabel="Pepperoni Pizza"/>
+                <f:selectItem itemValue="2" itemLabel="Sausage Pizza"/>
+                <f:selectItem itemValue="3" itemLabel="Cheese Pizza"/>
+            </h:selectOneRadio>
+            <br></br>
+            <h:graphicImage name="pepperoni.jpg" library="images"/>
+            <h:graphicImage name="sausage.jpg" library="images"/>
+            <h:graphicImage name="cheese.jpg" library="images"/>
+            <br></br><br></br>
+            <h:outputText value="Pizza Quantity"/>
+            <h:inputText id="pizzaQuantity" value="#{pizzaBean.pizzaQuantity}" required="true" requiredMessage="You must enter a quantity" validatorMessage="Enter an integer for pizza quantity">
+                <f:validateRegex pattern=
+                  "\d+" />
+            </h:inputText>
+            <h:message id="firstNameMessage" for="firstName" 
+               styleClass="error"/>
+            <br></br><br></br>
+            <h:commandButton value="Next step: select your sides" action="selectsides?faces-redirect=true"/><!-- require input -->
+        </h:form>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <head>
+        <title>Select your drink</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <h1>Select your drink</h1>
+        <h:form>
+            <h:selectOneRadio id="drinkType" value="#{pizzaBean.drinkType}" required="true" requiredMessage="You must choose an option">
+                <f:selectItem itemValue="1" itemLabel="Pepsi"/>
+                <f:selectItem itemValue="2" itemLabel="Bottled Water"/>
+            </h:selectOneRadio>
+            <br></br>
+            <h:graphicImage name="pepsi.jpg" library="images"/>
+            <h:graphicImage name="water.jpg" library="images"/>
+            <br></br><br></br>
+            <h:outputText value="Drink quantity:"/>
+            <h:inputText id="drinkQuantity" value="#{pizzaBean.drinkQuantity}"  required="true" requiredMessage="You must enter a quantity" validatorMessage="Enter an integer for drink quantity">
+                <f:validateRegex pattern=
+                  "\d+" />
+            </h:inputText>
+            <br></br><br></br>
+            <h:commandButton value="Next step: register and submit" action="register2submit?faces-redirect=true"/> <!-- require input -->
+        </h:form>
+    </body>
+</html>
